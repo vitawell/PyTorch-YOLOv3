@@ -1,15 +1,22 @@
-### 前言
+### 实践：
+使用自己的图片训练已经在coco上预训练过的yolov3模型，并实现视频中的水下目标识别。
+
+本项目主要参考 https://github.com/FLyingLSJ/PyTorch-YOLOv3-master
+
+视频检测的实现，主要为video_demo.py 参考 https://github.com/ayooshkathuria/pytorch-yolo-v3
+
+`第一次用了80张图片为训练集，20张图片为验证集，跑1个epoch大概半个小时。而且效果不好，同一个物体会识别为几个类，且无关物体也会识别。`
+
+
+
+### 以下为主要参考项目的readme：
 
 本项目参考 https://github.com/eriklindernoren/PyTorch-YOLOv3 ，感谢大佬开源，在此基础上增加了数据准备的说明，项目流程说明。
-
-视频检测video_demo.py 参考 https://github.com/ayooshkathuria/pytorch-yolo-v3
 
 [数据准备说明文档]: data/custom/readme.md	"数据准备说明文档"
 
 
 `注意：因为本人的电脑没有 GPU ，故跑不了代码，本项目所有代码都是在 Linux / mac 下运行的，如果你的电脑（Win 操作系统想要运行本代码，可以安装 Git 软件来执行 Linux 命令）`
-
-`用了80张图片为训练集，20张图片为验证集，跑1个epoch大概半个小时。而且效果不好，同一个物体会识别为几个类，且无关物体也会识别。`
 
 
 
