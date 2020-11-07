@@ -2,6 +2,8 @@
 
 本项目参考 https://github.com/eriklindernoren/PyTorch-YOLOv3 ，感谢大佬开源，在此基础上增加了数据准备的说明，项目流程说明。
 
+视频检测video_demo.py 参考 https://github.com/ayooshkathuria/pytorch-yolo-v3
+
 [数据准备说明文档]: data/custom/readme.md	"数据准备说明文档"
 
 
