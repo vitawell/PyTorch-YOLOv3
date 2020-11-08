@@ -3,7 +3,8 @@
 
 本项目主要参考 https://github.com/FLyingLSJ/PyTorch-YOLOv3-master
 
-视频检测的实现（主要为video_demo.py）参考 https://github.com/ayooshkathuria/pytorch-yolo-v3
+视频检测的实现参考 https://github.com/ayooshkathuria/pytorch-yolo-v3
+（主要为video_demo.py :注意运行时需要使用命令行或者修改参数中的视频名称和自己训练的模型checkpoints）
 
 `第一次用了80张图片为训练集，20张图片为验证集，跑1个epoch大概20min，跑了几十个epoch。而且效果不好，同一个物体会识别为几个类，且无关物体也会识别。`
 
