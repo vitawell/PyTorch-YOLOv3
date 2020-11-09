@@ -99,7 +99,7 @@ python train.py --model_def config/yolov3-custom.cfg --data_config config/custom
     
 # 从中断的地方开始训练
 python train.py --model_def config/yolov3-custom.cfg --data_config config/custom.data --pretrained_weights checkpoints/yolov3_ckpt_299.pth --epoch 
-# checkpoints是保存的训练过的模型权重！ 出现了错误，删去末尾的--epoch则正常。
+# checkpoints是保存的训练过的模型权重！ 末尾的--epoch 后面需加上数字，表示训练几轮。
 
 ```
 
