@@ -196,7 +196,7 @@ if __name__ == '__main__':
             list(map(lambda x: write(x, orig_im), output))
 
             #一帧一帧显示，写视频时也得保留这段
-            cv2.imshow("frame", orig_im)
+            #cv2.imshow("frame", orig_im)  # 在colab上需注释这一句，负责会提示connot connect to X sever（云端没有图形界面，所以报错）
             key = cv2.waitKey(1)
             if key & 0xFF == ord('q'):
                 break
