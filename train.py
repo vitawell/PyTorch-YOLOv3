@@ -31,7 +31,7 @@ if __name__ == "__main__":
     parser.add_argument("--data_config", type=str, default="config/coco.data", help="path to data config file")  # 也是配置文件，配置类别数、训练和测试集路径、类别名称文件路径等
     parser.add_argument("--pretrained_weights", type=str, help="if specified starts from checkpoint model")  # 预训练模型的权重路径，最开始可以使用 yolov3_coco.weights 权重进行训练，也可以在训练过的模型基础上进行训练
     parser.add_argument("--n_cpu", type=int, default=1, help="number of cpu threads to use during batch generation")  
-    # 生成数据是 cpu 的线程数  # 原本default为8，在colab上报错，改为1
+    # 生成数据是 cpu 的线程数  # 原本default为8，在colab上使用GPU加速时报错，改为1
     
     parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")  # 输入数据的尺寸，此值必须是 32 的整数倍
     parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between saving model weights")
