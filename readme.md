@@ -1,4 +1,4 @@
-### 水下目标识别实践：
+## 水下目标识别实践：
 使用自己的图片训练已经在coco上预训练过的yolov3模型，并实现视频中的水下目标识别。
 
 本项目主要参考 https://github.com/FLyingLSJ/PyTorch-YOLOv3-master
@@ -23,7 +23,8 @@
 
 
 
-### 以下为主要参考项目的readme：
+——————
+## 以下为主要参考项目的readme：
 
 本项目参考 https://github.com/eriklindernoren/PyTorch-YOLOv3 ，感谢大佬开源，在此基础上增加了数据准备的说明，项目流程说明。
 
