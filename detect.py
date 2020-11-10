@@ -127,7 +127,7 @@ if __name__ == "__main__":
                     plt.text(
                         x1,
                         y1,
-                        s=classes[int(cls_pred)]+','+str(conf.item()),  #显示置信度,
+                        s=classes[int(cls_pred)]+','+str(round(conf.item(), 2)),  #加上显示置信度,两位小数
                         color="white",
                         verticalalignment="top",
                         bbox={"color": color, "pad": 0},
