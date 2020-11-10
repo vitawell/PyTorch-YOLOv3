@@ -33,6 +33,8 @@ if __name__ == "__main__":
     parser.add_argument("--n_cpu", type=int, default=0, help="number of cpu threads to use during batch generation")
     parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")
     parser.add_argument("--checkpoint_model", type=str, help="path to checkpoint model")
+    # 增加一个类别置信度阈值
+    parser.add_argument("--cls_thres", type=float, default=0.7,help="object class confidence threshold")
     opt = parser.parse_args()
     print(opt)
 
@@ -111,8 +113,8 @@ if __name__ == "__main__":
             n_cls_preds = len(unique_labels)
             bbox_colors = random.sample(colors, n_cls_preds)
             for x1, y1, x2, y2, conf, cls_conf, cls_pred in detections:
-                # 类别的置信度大于0.7时才输出框
-                if cls_conf.item()>0.7 :
+                # 类别的置信度大于cls_thres才输出框
+              if cls_conf.item()> opt.cls_thres : 
                     print("\t+ Label: %s, Conf: %.5f" % (classes[int(cls_pred)], cls_conf.item()))
 
                     box_w = x2 - x1
