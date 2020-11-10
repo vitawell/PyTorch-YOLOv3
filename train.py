@@ -78,8 +78,20 @@ if __name__ == "__main__":
         collate_fn=dataset.collate_fn,
     )
 
-    optimizer = torch.optim.Adam(model.parameters())
+    
+    
+    # optimizer = torch.optim.Adam(model.parameters())
 
+    # 冻结所有层: 
+    for param in model.parameters(): 
+        param.requires_grad = False
+    # 只解冻最后一个？
+    param.requires_grad = True
+    
+    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()))
+
+    
+    
     metrics = [
         "grid_size",
         "loss",
