@@ -323,7 +323,7 @@ if __name__ == "__main__":
     for name, param in model.named_parameters(): 
         param.requires_grad = False
 
-    # 解冻第105层
+    # 解冻指定层
     for name, param in model.named_parameters(): 
       if '105' or '104' or '103' or '102'  or '101' in name:
         param.requires_grad = True
