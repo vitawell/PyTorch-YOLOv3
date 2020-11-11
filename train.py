@@ -313,10 +313,13 @@ if __name__ == "__main__":
     """
 
     # 冻结所有层: 
-    for param in model.parameters(): 
+    for name, param in model.named_parameters(): 
         param.requires_grad = False
-    # 只解冻最后一个？
-    param.requires_grad = True
+
+    # 解冻第105层
+    for name, param in model.named_parameters(): 
+      if '105' in name:
+        param.requires_grad = True
     
     optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()))
 
