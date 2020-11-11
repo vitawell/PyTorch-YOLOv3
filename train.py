@@ -24,20 +24,27 @@ import torch.optim as optim
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--epochs", type=int, default=100, help="number of epochs")  # 训练的轮次
-    parser.add_argument("--batch_size", type=int, default=8, help="size of each image batch")  # 每次放进模型的批次
-    parser.add_argument("--gradient_accumulations", type=int, default=2, help="number of gradient accums before step")  # 累积多少部的梯度
-    parser.add_argument("--model_def", type=str, default="config/yolov3.cfg", help="path to model definition file")  # yolo 配置文件路径
-    parser.add_argument("--data_config", type=str, default="config/coco.data", help="path to data config file")  # 也是配置文件，配置类别数、训练和测试集路径、类别名称文件路径等
-    parser.add_argument("--pretrained_weights", type=str, help="if specified starts from checkpoint model")  # 预训练模型的权重路径，最开始可以使用 yolov3_coco.weights 权重进行训练，也可以在训练过的模型基础上进行训练
+    # 训练的轮次
+    parser.add_argument("--epochs", type=int, default=100, help="number of epochs")  
+    # 每次放进模型的批次
+    parser.add_argument("--batch_size", type=int, default=8, help="size of each image batch")  
+    # 累积多少部的梯度
+    parser.add_argument("--gradient_accumulations", type=int, default=2, help="number of gradient accums before step")  
+    # yolo 配置文件路径
+    parser.add_argument("--model_def", type=str, default="config/yolov3-custom.cfg", help="path to model definition file")  
+    # 也是配置文件，配置类别数、训练和测试集路径、类别名称文件路径等
+    parser.add_argument("--data_config", type=str, default="config/coco.data", help="path to data config file")  
+    # 预训练模型的权重路径，最开始可以使用 weights/yolov3.weights 权重进行训练，也可以使用checkpoints
+    parser.add_argument("--pretrained_weights", type=str, help="if specified starts from checkpoint model")  
+
+    # 生成数据是 cpu 的线程数
     parser.add_argument("--n_cpu", type=int, default=1, help="number of cpu threads to use during batch generation")  
-    # 生成数据是 cpu 的线程数  # 原本default为8，在colab上使用GPU加速时报错，改为1
-    
-    parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")  # 输入数据的尺寸，此值必须是 32 的整数倍
+    # 输入数据的尺寸，此值必须是 32 的整数倍
+    parser.add_argument("--img_size", type=int, default=416, help="size of each image dimension")  
     parser.add_argument("--checkpoint_interval", type=int, default=1, help="interval between saving model weights")
     parser.add_argument("--evaluation_interval", type=int, default=1, help="interval evaluations on validation set")
     parser.add_argument("--compute_map", default=False, help="if True computes mAP every tenth batch")
-    parser.add_argument("--multiscale_training", default=True, help="allow for multi-scale training")  # 
+    parser.add_argument("--multiscale_training", default=True, help="allow for multi-scale training")  
     opt = parser.parse_args()
     print(opt)
 
@@ -318,7 +325,7 @@ if __name__ == "__main__":
 
     # 解冻第105层
     for name, param in model.named_parameters(): 
-      if '105' in name:
+      if '105' or '104' or '103' or '102'  or '101' in name:
         param.requires_grad = True
     
     optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()))
