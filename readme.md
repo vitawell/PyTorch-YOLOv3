@@ -1,5 +1,5 @@
 ## 水下目标识别实践：
-使用自己的图片训练已经在coco上预训练过的yolov3模型，并实现视频中的水下目标识别。
+使用URPC比赛的水下图像数据训练已经在coco上预训练过的yolov3模型，并实现视频中的水下目标识别。
 
 本项目主要参考 https://github.com/FLyingLSJ/PyTorch-YOLOv3-master
 
