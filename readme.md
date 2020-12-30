@@ -21,6 +21,8 @@
 用了800张图片为训练集，200张图片为验证集，跑1个epoch大概1个小时，跑了3个epoch，损失大概降为5。效果好了点，但还是有同一个物体会识别为几个类，且无关物体也会识别。
 
 ##### 使用了Google Colab Notebook来训练模型
+Colab文件：https://colab.research.google.com/drive/1Xq2cpXjVgxx_dMNSgmF4MDvQ9NLyVt7e?usp=sharing
+
 跑一个epoch大概十几分钟，跑了10个epoch，损失大概降为3，效果提升不大。
 
 又在这基础上只解冻101-105，跑了10个epoch，损失降为1.5，但是效果提升不大。
