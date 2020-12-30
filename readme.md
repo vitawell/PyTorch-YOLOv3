@@ -8,7 +8,7 @@
 ```
 主要为video_demo.py :注意运行时需要使用命令行或者修改参数中的视频名称和自己训练的模型checkpoints。
 
-在colab上训练得到的模型为cuda版本，只能在安装了cuda的colab上使用。在自己笔记本上只能使用非cuda版本的模型。
+在colab上训练得到的模型为cuda版本，只能在安装了cuda的colab上使用。在自己笔记本上只能使用非cuda版本的模型？之后好像能用了。
 ```
 
 
@@ -20,7 +20,7 @@
 ##### 第二次
 用了800张图片为训练集，200张图片为验证集，跑1个epoch大概1个小时，跑了3个epoch，损失大概降为5。效果好了点，但还是有同一个物体会识别为几个类，且无关物体也会识别。
 
-##### 使用了colab训练
+##### 使用了Google Colab Notebook来训练模型
 跑一个epoch大概十几分钟，跑了10个epoch，损失大概降为3，效果提升不大。
 
 又在这基础上只解冻101-105，跑了10个epoch，损失降为1.5，但是效果提升不大。
@@ -56,6 +56,8 @@
 
 ### 图像预处理：Retinex图像增强算法
 用MSR处理了1000张水下图像，用其中800张图片作为训练集，200张图片为验证集。
+
+MSR图像增强算法的Google Colab Notebook文件：https://colab.research.google.com/drive/1KIJJ6eUqfWzizU9eZmzxH7A3KZ2ZLPwg?usp=sharing
 
 ##### 第一次
 只解冻101-105层，训练了个40个epoch，损失降为3.
