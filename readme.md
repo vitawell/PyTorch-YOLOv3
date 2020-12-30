@@ -62,20 +62,22 @@ Colab文件：https://colab.research.google.com/drive/1Xq2cpXjVgxx_dMNSgmF4MDvQ9
 MSR图像增强算法的Google Colab Notebook文件：https://colab.research.google.com/drive/1KIJJ6eUqfWzizU9eZmzxH7A3KZ2ZLPwg?usp=sharing
 
 ##### 第一次
-只解冻101-105层，训练了个40个epoch，损失降为3.
+只解冻101-105层，训练了个40个epoch，损失降为3，mAP最高为23%.
 
 ##### 第二次
-在之前解冻所有层训练的基础上，只解冻101-105层，训练了10个epoch，损失降为3。
+在之前解冻所有层训练的基础上，只解冻101-105层，训练了10个epoch，损失降为3，mAP最高为22%。
 
 对用MSR处理过的图片检测效果一般，对未经处理的图片检测效果更差一点。
 
 ##### 第三次
-在第二次训练基础上解冻所有层，训练了10个epoch，损失降为2.
+在第二次训练基础上解冻所有层，训练了35个epoch，损失降为1，mAP最高为26%.
 
 对未经处理过的图片检测效果一般，对经MSR处理的图片检测效果也差不多。
 
+
 &emsp;
 
+&emsp;
 ————————————
 ## 以下为主要参考项目的readme：
 
